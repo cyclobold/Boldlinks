@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+      <textarea name="editor1" id="editor1"></textarea>
+    </form>
+
+    
+
+    <script src="ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace("editor1")
+
+
+        CKEDITOR.on("instanceReady", function(event){
+           
+            CKEDITOR.instances["editor1"].on("keydown", function(){
+
+                console.log("working")
+
+            })  
+
+
+
+        })
+    </script>
+</body>
+</html>

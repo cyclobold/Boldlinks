@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form method="POST" id="create-item-form">
+        <input type="text" name="item">
+        <button>Create Item</button>
+    </form>
+
+    <script src="https://unpkg.com/axios@0.25.0/dist/axios.min.js"></script>
+    <script type="text/javascript">
+        const createItemForm = document.querySelector("#create-item-form");
+
+        createItemForm.addEventListener("submit", async function(event){
+            event.preventDefault();
+
+            let item = this.item.value.trim();
+
+            //send your request..
+            let feedback = await axios.post("http://localhost:4000/add-item", {
+                item: item
+            });
+
+            console.log(feedback);
+
+
+
+        })
+
+
+    </script>
+</body>
+
+
+
+</html>
